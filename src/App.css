@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400;500;600&display=swap");
+
+:root {
+  --tinta: #1b1464;
+  --fundo: #e6e3ff;
+  --papel: #fbfaff;
+  --azul: #3a35f0;
+  --lima: #c8f25a;
+  --coral: #ff6b4a;
+  --borda: 2px solid var(--tinta);
+  --sombra: 6px 6px 0 var(--tinta);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.pagina {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  padding: 3.5rem 0 2rem;
+}
+
+.cabecalho h1 {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: clamp(3.2rem, 13vw, 9rem);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: var(--azul);
+  text-shadow: 4px 4px 0 var(--lima);
+}
+
+.cabecalho p {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.15rem;
+}
+
+/* Seções */
+.secao {
+  margin-top: 2.5rem;
+}
+
+.secao__titulo {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.2rem 0.9rem;
+  background: var(--tinta);
+  color: var(--fundo);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+/* Resumo */
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin: 0;
+  background: var(--tinta);
+  color: var(--fundo);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.indicador {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1.5rem;
+  border-right: 2px dashed var(--azul);
+}
+
+.indicador:last-child {
+  border-right: 0;
+}
+
+.indicador__valor {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--lima);
+}
+
+.indicador__rotulo {
+  font-weight: 500;
+}
+
+/* Cards */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--papel);
+  border: var(--borda);
+  border-radius: 0.25rem 1.75rem 0.25rem 1.75rem;
+  box-shadow: var(--sombra);
+}
+
+.card--destaque {
+  background: var(--lima);
+}
+
+@media (min-width: 760px) {
+  .card--destaque {
+    grid-column: span 2;
+  }
+}
+
+.card__selo {
+  align-self: flex-start;
+  padding: 0.1rem 0.6rem;
+  background: var(--tinta);
+  color: var(--lima);
+  font-size: 0.85rem;
+  border-radius: 999px;
+}
+
+.card__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.card__topo h3 {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.card__descricao,
+.card__responsavel {
+  margin: 0;
+}
+
+.card__responsavel {
+  font-weight: 600;
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Status e tags */
+.badge {
+  flex-shrink: 0;
+  padding: 0.15rem 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: var(--borda);
+  border-radius: 999px;
+}
+
+.badge--concluido {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: #fff;
+}
+
+.badge--desenvolvimento {
+  background: var(--coral);
+  color: var(--tinta);
+}
+
+.badge--planejamento {
+  background: transparent;
+  border-style: dashed;
+}
+
+.badge--outro {
+  background: var(--papel);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  background: var(--fundo);
+  border: 1.5px solid var(--tinta);
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Rodapé */
+.rodape {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 2px dashed var(--tinta);
+  font-size: 0.9rem;
+}
+
+.rodape p {
+  margin: 0;
+}
